@@ -10,7 +10,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 INSTALLED_APPS = [
     'website',
-    'exampleapp',
+    'bvii',
     'bootstrap3',
     'registration',
     'dbbackup',
@@ -141,7 +141,7 @@ LOGGING = {
             'formatter': 'verbose'
         },
         'file_django': {
-            'level': 'ERROR',
+            'level': 'WARNING',
             'class': 'logging.handlers.RotatingFileHandler',
             'filename': os.path.join(LOG_DIR, 'django.log'),
             'maxBytes': LOGFILE_MAXSIZE,
@@ -149,7 +149,7 @@ LOGGING = {
             'formatter': 'verbose'
         },
         'file_error': {
-            'level': 'ERROR',
+            'level': 'WARNING',
             'class': 'logging.handlers.RotatingFileHandler',
             'filename': os.path.join(LOG_DIR, 'error.log'),
             'maxBytes': LOGFILE_MAXSIZE,
@@ -167,11 +167,11 @@ LOGGING = {
     },
     'loggers': {
         'django': {
-            'handlers': ['file_django', 'console'],
+            'handlers': ['file_django', 'file_error', 'console'],
             'propagate': True,
             'level': 'ERROR',
         },
-        'exampleapp': {
+        'bvii': {
             'handlers': ['file_debug', 'file_error', 'console'],
             'propagate': True,
             'level': 'DEBUG',

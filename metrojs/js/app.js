@@ -5,7 +5,7 @@ var core = require("./core.js");
 function addRandomMinorStations(track, station) {
     var nStations = Math.floor((Math.random() * 5) + 1);
     for (var i = 0; i < nStations; ++i) {
-        track.createStationMinor(event.point, track.segmentToStation(station).id);
+        track.createStationMinor(station.position, track.segmentToStation(station).id);
     }
 }
 
@@ -51,7 +51,7 @@ function drawAll() {
 
 
 
-view.onResize = function(event) {
+view.onResize = function() {
     project.clear();
     drawAll();
 }

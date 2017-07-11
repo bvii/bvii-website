@@ -12,7 +12,6 @@ urlpatterns = [
     url(r'^$', TemplateView.as_view(template_name='website/index.html'), name='homepage'),
     url(r'^about/$', TemplateView.as_view(template_name="website/about.html"), name='about'),
     url(r'^contact/$', ContactView.as_view(), name='contact'),
-    url(r'^contribute/$', TemplateView.as_view(template_name="website/contribute.html"), name='contribute'),
 
     url(r'^userprofile/(?P<pk>[0-9]+)/$', login_required(UserProfileView.as_view()), name='userprofile'),
 

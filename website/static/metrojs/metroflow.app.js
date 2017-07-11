@@ -708,7 +708,9 @@ module.exports = {
 
 __webpack_require__(1);
 var core = __webpack_require__(2);
+var styles = __webpack_require__(0);
 
+var stationToChange = null;
 
 function addRandomMinorStations(track, station) {
     var nStations = Math.floor((Math.random() * 5) + 1);
@@ -716,6 +718,15 @@ function addRandomMinorStations(track, station) {
         track.createStationMinor(station.position, track.segmentToStation(station).id);
     }
 }
+
+$("#homepage-title").on('click', function() {
+    console.log('click');
+    var selectStyle = styles.createStationStyle();
+    selectStyle.stationRadius = 20;
+    selectStyle.strokeColor = "red";
+    stationToChange.style = selectStyle;
+    stationToChange.draw();
+})
 
 function drawAll() {
     var overlayHeight = $("#overlay").height();
@@ -743,6 +754,7 @@ function drawAll() {
     addRandomMinorStations(track, station);
     station = track.createStation(new Point(width*.5, Math.min(overlayHeight*1.25, maxOffset+overlayHeight)), null);
     addRandomMinorStations(track, station);
+    stationToChange = station;
     station = track.createStation(new Point(width*.65, Math.min(overlayHeight*1.05, maxOffset+overlayHeight)), null);
     addRandomMinorStations(track, station);
     station = track.createStation(new Point(width*.8, Math.min(overlayHeight*1.05, maxOffset+overlayHeight)), null);

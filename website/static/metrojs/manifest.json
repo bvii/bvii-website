@@ -1,0 +1,7 @@
+{
+  "app.js": "metroflow.app.js",
+  "core.js": "metroflow.core.js",
+  "css.css": "metroflow-basic.css",
+  "css.js": "metroflow.css.js",
+  "styles.js": "metroflow.styles.js"
+}

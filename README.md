@@ -4,8 +4,8 @@
 
 Get the code and enter the project directory,
 ```
-$ git clone https://github.com/bartromgens/django-project-template.git
-$ cd django-project-template
+$ git clone https://github.com/bvii/bvii-website.git
+$ cd bvii-website
 ```
 Install dependencies that you will need
 ```
